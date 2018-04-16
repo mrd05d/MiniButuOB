@@ -1,0 +1,2 @@
+# MiniButuOB
+Ubuntu mini Openbox
