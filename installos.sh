@@ -1,25 +1,25 @@
 sudo apt-get install -y software-properties-common
 sudo add-apt-repository -y ppa:peterlevi/ppa
 
-
-sudo apt install -y lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings openbox obconf obmenu wicd ubuntu-drivers-common mesa-utils mesa-utils-extra compton xorg xserver-xorg nemo sakura lxappearance lxappearance-obconf feh tint2 variety nitrogen plank chromium-browser firefox filezilla git
-
-
-mkdir ~/.config/openbox
-echo "compton &" >> autostart
-echo "nitrogen --restore &" >> autostart
-echo "tint2 &" >> autostart
-echo "plank &" >> autostart
-
-sed -i 's/bottom/top/g' ~/.config/tint2/tint2rc
-
 sudo apt-get install -y apt-transport-https
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
 echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
 sudo apt update
 sudo apt-get install -y sublime-text
 
-wget https://download.opensuse.org/repositories/home:/Head_on_a_Stick:/obmenu-generator/Debian_8.0/all/obmenu-generator_0.66-1_all.deb
+sudo apt install -y lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings openbox obconf obmenu wicd ubuntu-drivers-common mesa-utils mesa-utils-extra compton xorg xserver-xorg nemo sakura lxappearance lxappearance-obconf feh tint2 variety variety-slideshow nitrogen plank chromium-browser firefox filezilla git
+
+sudo apt install -y intel-microcode
+
+mkdir ~/.config/openbox
+echo "compton &" >> ~/.config/openbox/autostart
+echo "nitrogen --restore &" >> ~/.config/openbox/autostart
+echo "tint2 &" >> ~/.config/openbox/autostart
+echo "plank &" >> ~/.config/openbox/autostart
+
+sed -i 's/bottom/top/g' ~/.config/tint2/tint2rc
+
+wget -o ~/obmenu-generator_0.66-1_all.deb https://download.opensuse.org/repositories/home:/Head_on_a_Stick:/obmenu-generator/Debian_8.0/all/obmenu-generator_0.66-1_all.deb
 sudo apt install -y ./obmenu-generator_0.66-1_all.deb
 
 sudo obmenu-generator -s -c
@@ -34,13 +34,15 @@ cd ~
 git clone https://github.com/arcolinux/arcolinux-tint2-themes.git
 sudo cp -a ~/arcolinux-tint2-themes/*rc ~/.config/tint2/
 
+cd ~
 git clone https://github.com/LinxGem33/Plank-Themes
 sudo cp -a ~/Plank-Themes/Plank\ Themes/* /usr/share/plank/themes/
 
+cd ~
 git clone https://github.com/horst3180/arc-icon-theme.git
 sudo mv ./arc-icon-theme/Arc/ /usr/share/icons/
 
 sudo rm -r ~/arcolinux-tint2-themes
 sudo rm -r ~/obmenu-generator_0.66-1_all.deb
 sudo rm -r ~/Plank-Themes/
-sudo rm -r ~/arc-icon-theme/Arc/
+sudo rm -r ~/arc-icon-theme/
