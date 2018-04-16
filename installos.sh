@@ -42,14 +42,6 @@ echo "nitrogen --restore &" | sudo tee -a ~/.config/openbox/autostart
 echo "tint2 &" | sudo tee -a ~/.config/openbox/autostart
 echo "plank &" | sudo tee -a ~/.config/openbox/autostart
 
-
-echo "******************************************"
-echo "Flipping Tint2 To the Top"
-echo "******************************************"
-echo ""
-
-sudo sed -i 's/bottom/top/g' ~/.config/tint2/tint2rc
-
 echo "******************************************"
 echo "Installing Obmenu-Generator"
 echo "******************************************"
@@ -78,7 +70,16 @@ echo ""
 
 cd ~
 sudo git clone https://github.com/arcolinux/arcolinux-tint2-themes.git
+sudo mkdir ~/.config/tint2 
 sudo cp -a ~/arcolinux-tint2-themes/*rc ~/.config/tint2/
+
+echo "******************************************"
+echo "Flipping Tint2 To the Top"
+echo "******************************************"
+echo ""
+
+sudo sed -i 's/bottom/top/g' ~/.config/tint2/tint2rc
+
 
 echo "******************************************"
 echo "Installing Plank Themes"
