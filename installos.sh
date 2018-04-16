@@ -37,10 +37,10 @@ echo "******************************************"
 echo ""
 
 mkdir ~/.config/openbox
-echo "compton &" >> ~/.config/openbox/autostart
-echo "nitrogen --restore &" >> ~/.config/openbox/autostart
-echo "tint2 &" >> ~/.config/openbox/autostart
-echo "plank &" >> ~/.config/openbox/autostart
+echo "compton &" | sudo tee -a ~/.config/openbox/autostart
+echo "nitrogen --restore &" | sudo tee -a ~/.config/openbox/autostart
+echo "tint2 &" | sudo tee -a ~/.config/openbox/autostart
+echo "plank &" | sudo tee -a ~/.config/openbox/autostart
 
 
 echo "******************************************"
@@ -64,11 +64,11 @@ echo "******************************************"
 echo ""
 
 sudo obmenu-generator -s -c
-sudo sed -i 's/geany/subl/g' schema.pl
-sudo sed -i 's/geany/subl/g' config.pl
-sudo sed -i 's/xterm/sukara/g' schema.pl
-sudo sed -i 's/xterm/sukara/g' config.pl
-sudo sed -i 's|xdg-open http://|chromium-browser|g' schema.pl
+sudo sed -i 's/geany/subl/g' ~/.config/obmenu-generator/schema.pl
+sudo sed -i 's/geany/subl/g' ~/.config/obmenu-generator/config.pl
+sudo sed -i 's/xterm/sukara/g' ~/.config/obmenu-generator/schema.pl
+sudo sed -i 's/xterm/sukara/g' ~/.config/obmenu-generator/config.pl
+sudo sed -i 's|xdg-open http://|chromium-browser|g' ~/.config/obmenu-generator/schema.pl
 sudo obmenu-generator -s -c
 
 echo "******************************************"
