@@ -72,7 +72,7 @@ echo ""
 
 cd ~
 sudo git clone https://github.com/arcolinux/arcolinux-tint2-themes.git
-sudo mkdir ~/.config/tint2
+sudo mkdir ~/.config/tint2 
 sudo cp -a ~/arcolinux-tint2-themes/*rc ~/.config/tint2/
 
 echo "******************************************"
@@ -100,6 +100,13 @@ echo ""
 cd ~
 sudo git clone https://github.com/horst3180/arc-icon-theme.git
 sudo mv ./arc-icon-theme/Arc/ /usr/share/icons/
+
+echo "******************************************"
+echo "Installing La Capitaine Icons"
+echo "******************************************"
+echo ""
+cd /usr/share/icons
+sudo git clone https://github.com/keeferrourke/la-capitaine-icon-theme.git
 
 echo "******************************************"
 echo "Cleaning up"
