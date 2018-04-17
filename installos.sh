@@ -42,6 +42,7 @@ echo "nitrogen --restore &" | sudo tee -a ~/.config/openbox/autostart
 echo "tint2 &" | sudo tee -a ~/.config/openbox/autostart
 echo "plank &" | sudo tee -a ~/.config/openbox/autostart
 
+sleep 15
 echo "******************************************"
 echo "Installing Obmenu-Generator"
 echo "******************************************"
@@ -109,4 +110,4 @@ sudo rm -r ~/obmenu-generator_0.66-1_all.deb
 sudo rm -r ~/Plank-Themes/
 sudo rm -r ~/arc-icon-theme/
 
-sudo chowm -R mrd05d ~/.config
+sudo chown -R mrd05d ~/.config
