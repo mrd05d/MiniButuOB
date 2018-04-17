@@ -36,6 +36,7 @@ echo "Creating Autostart"
 echo "******************************************"
 echo ""
 
+sudo mkdir ~/.config
 sudo mkdir ~/.config/openbox
 echo "compton &" | sudo tee -a ~/.config/openbox/autostart
 echo "nitrogen --restore &" | sudo tee -a ~/.config/openbox/autostart
@@ -71,7 +72,7 @@ echo ""
 
 cd ~
 sudo git clone https://github.com/arcolinux/arcolinux-tint2-themes.git
-sudo mkdir ~/.config/tint2 
+sudo mkdir ~/.config/tint2
 sudo cp -a ~/arcolinux-tint2-themes/*rc ~/.config/tint2/
 
 echo "******************************************"
